@@ -3,7 +3,7 @@ import gym
 import time
 
 # Humanoid環境の読み込み
-env = gym.make("HumanoidFlagrunHarderBulletEnv-v1_2017jul")
+env = gym.make("HumanoidFlagrunHarderBulletEnv-v0")
 obs = env.reset()
 
 # 10000ステップ分動かす（お好みで増減OK）
