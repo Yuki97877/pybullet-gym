@@ -8,14 +8,8 @@ env = gym.make("HumanoidFlagrunHarderBulletEnv-v0")
 # モデル作成（PPOを使用）
 model = PPO("MlpPolicy", env, verbose=1)
 
-obs = env.reset()
-for _ in range(100000):
-    env.render()
-    action, _states = model.predict(obs)
-    obs, reward, done, info = env.step(action)
-    model.learn(total_timesteps=1)  # 1ステップずつ学習
-    if done:
-        obs = env.reset()
+# 学習
+model.learn(total_timesteps=100_000)
 
 
 # モデルを保存
